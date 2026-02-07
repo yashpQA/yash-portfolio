@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yash Patel | SQA Engineer</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Yash Patel | QA Automation Engineer</title>
 
 <style>
 :root {
-  --bg: #f4f6f8;
-  --text: #1f2937;
+  --bg: #f3f4f6;
+  --text: #111827;
   --card: #ffffff;
   --accent: #2563eb;
-  --header: #1e293b;
+  --header: #1e3a8a;
 }
 
 body.dark {
-  --bg: #0f172a;
-  --text: #e5e7eb;
-  --card: #1e293b;
+  --bg: #000000;
+  --text: #f1f5f9;
+  --card: #111111;
   --accent: #3b82f6;
-  --header: #020617;
+  --header: #050505;
 }
 
 body {
@@ -27,145 +27,104 @@ body {
   font-family: Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
-  transition: all 0.4s ease;
-  scroll-behavior: smooth;
+  transition: 0.3s;
 }
 
-/* HEADER */
 header {
   background: var(--header);
   color: white;
-  padding: 60px 20px;
   text-align: center;
+  padding: 50px 20px;
   position: relative;
 }
 
-header img {
-  width: 140px;
-  height: 140px;
+.profile-pic {
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid white;
-  margin-bottom: 15px;
-  animation: fadeIn 1.2s ease;
-}
-
-header h1 {
-  margin: 10px 0 5px;
-  font-size: 40px;
-}
-
-header p {
-  font-size: 18px;
-  color: #cbd5e1;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
 }
 
 .toggle-btn {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  background: var(--accent);
-  color: white;
-  border: none;
+  top: 15px;
+  right: 15px;
   padding: 8px 12px;
-  border-radius: 6px;
   cursor: pointer;
-}
-
-/* BUTTONS */
-.btn {
-  display: inline-block;
-  margin: 10px 5px 0;
-  padding: 10px 18px;
-  background: var(--accent);
-  color: white;
+  border: none;
   border-radius: 6px;
-  text-decoration: none;
-  font-size: 14px;
 }
 
-/* SECTIONS */
 section {
-  max-width: 1000px;
-  margin: 60px auto;
+  max-width: 950px;
+  margin: 30px auto;
   padding: 0 20px;
-  opacity: 0;
-  transform: translateY(40px);
-  animation: slideUp 0.9s ease forwards;
-}
-
-h2 {
-  border-left: 5px solid var(--accent);
-  padding-left: 12px;
+  animation: fadeInUp 0.6s ease-in-out;
 }
 
 .card {
   background: var(--card);
-  padding: 20px;
-  margin-top: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
 }
 
-/* SKILLS */
-.skills span {
+body.dark .card {
+  box-shadow: 0 0 15px rgba(255,255,255,0.05);
+}
+
+h2 { margin-top: 0; }
+
+.btn {
   display: inline-block;
-  background: #e0e7ff;
-  color: #1e3a8a;
-  padding: 8px 12px;
-  border-radius: 20px;
-  margin: 6px;
-  font-size: 14px;
-}
-
-body.dark .skills span {
-  background: #334155;
-  color: #e5e7eb;
-}
-
-/* PROJECTS */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-/* CONTACT FORM */
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-}
-
-button.submit-btn {
-  margin-top: 15px;
   padding: 10px 18px;
-  border: none;
-  border-radius: 6px;
+  margin: 8px 5px 0 0;
   background: var(--accent);
   color: white;
-  cursor: pointer;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-/* FOOTER */
+.skill { margin-bottom: 15px; }
+.bar { background: #222; border-radius: 20px; overflow: hidden; height: 10px; }
+.bar div { height: 10px; background: var(--accent); }
+
+.repo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.repo {
+  background: var(--card);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.testimonial {
+  background: var(--card);
+  padding: 15px;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 15px;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+ul { padding-left: 20px; }
+
 footer {
   text-align: center;
   padding: 20px;
   background: var(--header);
-  color: #cbd5e1;
-  margin-top: 50px;
+  color: white;
 }
 
-/* ANIMATIONS */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes slideUp {
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(15px); }
   to { opacity: 1; transform: translateY(0); }
 }
 </style>
@@ -175,96 +134,114 @@ footer {
 
 <header>
   <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
-  <img src="profile.jpg" alt="Yash Patel">
+  <img src="profile.jpg" alt="Yash Patel" class="profile-pic">
+  <h2>YP • QA AUTOMATION ENGINEER</h2>
   <h1>Yash Patel</h1>
-  <p>SQA Engineer | Automation Tester (Playwright • Selenium • Cypress)</p>
+  <p><span id="typing"></span></p>
 
-  <a class="btn" href="resume.pdf" download>📄 Download Resume</a>
+  <a class="btn" href="resume.pdf" download>⬇ Download Resume</a>
   <a class="btn" href="https://www.linkedin.com/in/yash-patel-887886247" target="_blank">LinkedIn</a>
   <a class="btn" href="https://github.com/yashpQA" target="_blank">GitHub</a>
 </header>
 
-<section>
-  <h2>👨‍💻 About Me</h2>
-  <div class="card">
-    I am an SQA Engineer with 1.5+ years of experience in automation and manual testing across
-    E-commerce, Banking, Compliance, and AI-based financial platforms.
-    I specialize in building reliable UI and end-to-end automation frameworks that reduce manual
-    effort and improve software quality.
-  </div>
+<section class="card">
+  <h2>👨‍💻 Professional Summary</h2>
+  <p>Automation Test Engineer with 1.5+ years of experience in UI and functional testing across E-commerce, Banking, Compliance, and AI-based platforms. Skilled in building automation frameworks using Playwright, Selenium, and Cypress. Strong understanding of SDLC/STLC, Agile methodology, and test management tools.</p>
 </section>
 
-<section>
-  <h2>🛠 Skills & Tools</h2>
-  <div class="card skills">
-    <span>Playwright</span>
-    <span>Selenium</span>
-    <span>Cypress</span>
-    <span>Postman</span>
-    <span>JIRA</span>
-    <span>TestRail</span>
-    <span>JavaScript</span>
-    <span>TypeScript</span>
-    <span>Java</span>
-    <span>Git</span>
-  </div>
+<section class="card">
+  <h2>🧠 Core Skills</h2>
+  <ul>
+    <li>Automation Testing: Playwright, Cypress, Selenium</li>
+    <li>Manual Testing, Regression, Smoke, Sanity & UAT</li>
+    <li>API Testing using Postman</li>
+    <li>Languages: Java, JavaScript, TypeScript</li>
+    <li>Bug Tracking: JIRA | Test Management: TestRail</li>
+    <li>Version Control: Git, GitHub, Bitbucket</li>
+    <li>Domains: E-commerce, Compliance, Banking, AI Bookkeeping</li>
+  </ul>
 </section>
 
-<section>
+<section class="card">
+  <h2>⚙️ Technical Proficiency</h2>
+  <div class="skill"><p>Playwright Automation</p><div class="bar"><div style="width:90%"></div></div></div>
+  <div class="skill"><p>Cypress Automation</p><div class="bar"><div style="width:85%"></div></div></div>
+  <div class="skill"><p>Selenium WebDriver</p><div class="bar"><div style="width:80%"></div></div></div>
+  <div class="skill"><p>API Testing (Postman)</p><div class="bar"><div style="width:75%"></div></div></div>
+  <div class="skill"><p>Manual & Regression Testing</p><div class="bar"><div style="width:92%"></div></div></div>
+</section>
+
+<section class="card">
   <h2>💼 Professional Experience</h2>
-  <div class="card">
-    <h3>SQA Engineer – QAble TestLab Pvt. Ltd.</h3>
-    <ul>
-      <li>Automated 60% of regression test cases using Playwright</li>
-      <li>Reduced manual testing effort by 30% per release</li>
-      <li>Automated KYC, KYB, AML, OFAC, and compliance workflows</li>
-      <li>Validated complete E-commerce purchase flows</li>
-      <li>Worked in Agile sprints with developers and stakeholders</li>
-    </ul>
+  <h3>QAble TestLab Pvt Ltd — SQA Engineer</h3>
+  <ul>
+    <li>Automated 60% of regression test cases using Playwright reducing manual effort by 30%</li>
+    <li>Automated KYC, KYB, AML, OFAC, PEP and sanctions validation flows</li>
+    <li>Validated complete E-commerce purchase journeys</li>
+    <li>Developed Cypress automation for AI-based bookkeeping workflows</li>
+    <li>Worked on Risk Management and Account Management automation projects</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>🚀 GitHub Projects</h2>
+  <div id="repos" class="repo-grid"></div>
+</section>
+
+<section class="card">
+  <h2>💬 Testimonials</h2>
+  <div class="testimonial">
+    <p>"Yash delivered high-quality automation and helped reduce regression effort significantly."</p>
+    <h4>— Project Manager</h4>
+  </div>
+  <div class="testimonial">
+    <p>"His automation work improved release confidence and caught critical issues early."</p>
+    <h4>— Tech Lead</h4>
   </div>
 </section>
 
-<section>
-  <h2>🧪 Automation Projects</h2>
-  <div class="projects">
-    <div class="card">
-      <h3>E-Commerce Automation</h3>
-      <p>Playwright automation for cart, checkout, and payment workflows.</p>
-    </div>
-    <div class="card">
-      <h3>Compliance Workflow Testing</h3>
-      <p>Automated KYC/KYB, AML, sanctions, and verification flows.</p>
-    </div>
-    <div class="card">
-      <h3>AI Bookkeeping Platform</h3>
-      <p>Cypress end-to-end tests for income, expense, and reconciliation workflows.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <h2>📩 Contact Me</h2>
-  <div class="card">
-    <p>Email: <a href="mailto:yashpatel4431@gmail.com">yashpatel4431@gmail.com</a></p>
-
-    <!-- Replace YOUR_FORM_ID after creating Formspree form -->
-    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button class="submit-btn" type="submit">Send Message</button>
-    </form>
-  </div>
+<section class="card" style="text-align:center">
+  <h2>👀 Portfolio Visitors</h2>
+  <img src="https://hitwebcounter.com/counter/counter.php?page=12345678&style=0006&nbdigits=5&type=page&initCount=0" alt="visitor counter"/>
 </section>
 
 <footer>
-  © 2026 Yash Patel | SQA Automation Engineer
+  <p>© 2026 Yash Patel | QA Automation Engineer</p>
 </footer>
 
 <script>
 function toggleDarkMode() {
   document.body.classList.toggle("dark");
 }
+
+const roles = ["SQA Engineer","Automation Tester","Playwright & Cypress Specialist","QA for AI & FinTech Apps"];
+let i = 0, j = 0, currentRole = "", isDeleting = false;
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  currentRole = roles[i];
+  if (!isDeleting) {
+    typingElement.textContent = currentRole.substring(0, j++);
+    if (j > currentRole.length) { isDeleting = true; setTimeout(typeEffect, 1200); return; }
+  } else {
+    typingElement.textContent = currentRole.substring(0, j--);
+    if (j < 0) { isDeleting = false; i = (i + 1) % roles.length; }
+  }
+  setTimeout(typeEffect, isDeleting ? 50 : 100);
+}
+typeEffect();
+
+fetch("https://api.github.com/users/yashpQA/repos?sort=updated")
+  .then(res => res.json())
+  .then(data => {
+    const repoContainer = document.getElementById("repos");
+    data.slice(0,6).forEach(repo => {
+      const repoCard = document.createElement("div");
+      repoCard.className = "repo";
+      repoCard.innerHTML = `<h3>${repo.name}</h3><p>${repo.description || "No description provided."}</p><a href="${repo.html_url}" target="_blank">View Project →</a>`;
+      repoContainer.appendChild(repoCard);
+    });
+  });
 </script>
 
 </body>
