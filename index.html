@@ -3,34 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yash Patel | QA Automation Engineer</title>
+<title>Yash Patel | Senior QA Automation Engineer</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
 :root { --accent:#3b82f6; --text:#e2e8f0; }
-body { margin:0; font-family:'Segoe UI',sans-serif; color:var(--text); background:#000; overflow-x:hidden;}
+
+html{scroll-behavior:smooth;}
+body{margin:0;font-family:'Segoe UI',sans-serif;color:var(--text);background:#000;overflow-x:hidden;padding-top:70px;}
 #particles-js{position:fixed;width:100%;height:100%;z-index:-1;}
+
+#navbar{
+  position:fixed;top:0;width:100%;
+  background:rgba(0,0,0,0.7);
+  backdrop-filter:blur(8px);
+  display:flex;justify-content:center;gap:25px;
+  padding:12px;z-index:999;
+}
+#navbar a{color:white;text-decoration:none;font-weight:bold;}
 
 header{text-align:center;padding:60px 20px 30px;}
 .profile-pic{width:160px;height:160px;border-radius:50%;object-fit:cover;border:4px solid white;box-shadow:0 0 35px rgba(59,130,246,.6);}
-.btn{display:inline-block;margin:8px;padding:10px 18px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;transition:.3s;}
+.btn{display:inline-block;margin:8px;padding:10px 18px;background:var(--accent);color:white;border-radius:8px;text-decoration:none;transition:.3s;border:none;cursor:pointer;}
 .btn:hover{transform:translateY(-3px);}
 
 .card{background:rgba(15,15,15,.75);backdrop-filter:blur(14px);border-radius:18px;padding:30px;margin:30px auto;max-width:1050px;box-shadow:0 0 25px rgba(59,130,246,.15);}
 h2 i{color:var(--accent);margin-right:10px;}
 
-/* SKILLS */
 .skill{margin:18px 0;}
 .skill-title{display:flex;align-items:center;gap:12px;font-weight:bold;}
 .skill-bar{height:8px;background:#222;border-radius:10px;overflow:hidden;margin-top:6px;}
 .skill-fill{height:100%;background:var(--accent);width:0;}
 
-/* STATS */
 .stats{display:flex;justify-content:space-around;flex-wrap:wrap;text-align:center;}
 .stat h3{font-size:32px;color:var(--accent);}
 
-/* PROJECT SLIDER */
+.timeline{border-left:3px solid var(--accent);padding-left:20px;}
+.timeline-item{margin-bottom:20px;}
+.timeline-item h3{color:var(--accent);}
+
+.tools-grid{display:flex;flex-wrap:wrap;gap:25px;font-size:40px;justify-content:center;}
+.tools-grid i{color:var(--accent);transition:.3s;}
+.tools-grid i:hover{transform:scale(1.2);}
+
 .project-slider{position:relative;min-height:260px;}
 .project-slide{position:absolute;width:100%;opacity:0;transform:translateY(20px) scale(.98);transition:.6s;}
 .project-slide.active{opacity:1;transform:none;position:relative;}
@@ -41,11 +57,25 @@ h2 i{color:var(--accent);margin-right:10px;}
 .dot.active{background:var(--accent);}
 
 footer{text-align:center;padding:25px;opacity:.6;}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:none;}
+table{border-collapse:collapse;}
+th,td{padding:10px;border-bottom:1px solid #333;}
 </style>
 </head>
 
 <body>
+
 <div id="particles-js"></div>
+
+<nav id="navbar">
+  <a href="#summary">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#metrics">Metrics</a>
+  <a href="#testimonials">Testimonials</a>
+  <a href="#contact">Contact</a>
+</nav>
 
 <header>
   <img src="profile.jpg" class="profile-pic">
@@ -55,16 +85,15 @@ footer{text-align:center;padding:25px;opacity:.6;}
   <a class="btn" href="https://github.com/yashpQA" target="_blank"><i class="fab fa-github"></i></a>
   <a class="btn" href="https://www.linkedin.com/in/yash-patel-887886247" target="_blank"><i class="fab fa-linkedin"></i></a>
   <a class="btn" href="mailto:yashpatel4431@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+  <button class="btn" onclick="toggleParticles()">Toggle Galaxy</button>
 </header>
 
-<!-- SUMMARY -->
-<section class="card">
+<section class="card" id="summary">
 <h2><i class="fa-solid fa-user"></i> Professional Summary</h2>
-<p>Automation Test Engineer with 1.5 years of experience in UI and Functional testing across E-commerce, Banking, Compliance, Risk Management, and AI-Bookkeeping domains. Strong expertise in Playwright, Selenium, Cypress, API Testing, Agile methodologies, and delivering stable high-quality software releases.</p>
+<p>Automation Test Engineer with 1.5 years of experience across E-commerce, Banking, Compliance, Risk Management and AI-Bookkeeping domains. Skilled in Playwright, Selenium, Cypress, API Testing, Agile processes, and delivering high-quality stable releases.</p>
 </section>
 
-<!-- SKILLS -->
-<section class="card">
+<section class="card" id="skills">
 <h2><i class="fa-solid fa-screwdriver-wrench"></i> Technical Skills</h2>
 
 <div class="skill"><div class="skill-title"><i class="fab fa-js"></i> JavaScript / TypeScript</div><div class="skill-bar"><div class="skill-fill" data-width="92%"></div></div></div>
@@ -76,7 +105,6 @@ footer{text-align:center;padding:25px;opacity:.6;}
 <div class="skill"><div class="skill-title"><i class="fa-solid fa-list-check"></i> Manual / Regression / UAT</div><div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div></div>
 </section>
 
-<!-- STATS -->
 <section class="card stats">
   <div class="stat"><h3 data-count="60">0</h3><p>% Regression Automated</p></div>
   <div class="stat"><h3 data-count="30">0</h3><p>% Manual Effort Reduced</p></div>
@@ -84,34 +112,86 @@ footer{text-align:center;padding:25px;opacity:.6;}
   <div class="stat"><h3 data-count="4">0</h3><p>Major Projects Automated</p></div>
 </section>
 
-<!-- EXPERIENCE -->
+<section class="card" id="experience">
+<h2><i class="fa-solid fa-timeline"></i> Career Journey</h2>
+<div class="timeline">
+  <div class="timeline-item">
+    <h3>2024 – Present</h3>
+    <p><b>SQA Engineer – QAble TestLab</b></p>
+    <p>Automation for Compliance, E-commerce & AI Bookkeeping platforms.</p>
+  </div>
+</div>
+</section>
+
 <section class="card">
-<h2><i class="fa-solid fa-briefcase"></i> Professional Experience</h2>
-<p><b>QAble TestLab Pvt Ltd — SQA Engineer</b></p>
+<h2><i class="fa-solid fa-toolbox"></i> Tools I Work With</h2>
+<div class="tools-grid">
+  <i class="fab fa-js"></i><i class="fab fa-java"></i><i class="fab fa-git-alt"></i>
+  <i class="fab fa-github"></i><i class="fa-solid fa-vial"></i>
+  <i class="fa-solid fa-bug"></i><i class="fa-solid fa-database"></i>
+</div>
+</section>
+
+<section class="card">
+<h2><i class="fa-solid fa-star"></i> What I Do Best</h2>
 <ul>
-<li>Automated 60% regression suite using Playwright reducing manual testing by 30%</li>
-<li>Validated complete E-commerce purchase workflows</li>
-<li>Automated KYC, KYB, AML, OFAC, PEPs and compliance checks</li>
-<li>Developed Cypress automation for AI-based bookkeeping platform</li>
-<li>Worked on Risk Management and Account Management domain projects</li>
-<li>Collaborated in Agile teams following SDLC/STLC</li>
+<li>Design scalable automation frameworks</li>
+<li>Reduce regression execution time</li>
+<li>Improve product quality with strong validation</li>
+<li>Build reliable end-to-end test coverage</li>
 </ul>
 </section>
 
-<!-- PROJECTS -->
-<section class="card">
+<section class="card" id="projects">
 <h2><i class="fa-solid fa-diagram-project"></i> Key Projects</h2>
 <div class="project-slider">
 <button class="slider-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
 <button class="slider-btn next"><i class="fa-solid fa-chevron-right"></i></button>
-
 <div class="project-slide active"><h3>E-Commerce Automation</h3><p>Automated full purchase and checkout flows using Playwright.</p></div>
 <div class="project-slide"><h3>Compliance & KYC Systems</h3><p>Automation of AML, sanctions, accreditation, KYC/KYB workflows.</p></div>
-<div class="project-slide"><h3>AI Bookkeeping Platform</h3><p>Automated income/expense workflows, reconciliation and financial insights.</p></div>
+<div class="project-slide"><h3>AI Bookkeeping Platform</h3><p>Automated financial workflows, reconciliation and reporting.</p></div>
 <div class="project-slide"><h3>Risk Management System</h3><p>Automated validation of risk scoring and account modules.</p></div>
-
 </div>
 <div class="dots"></div>
+</section>
+
+<section class="card" id="metrics">
+<h2><i class="fa-solid fa-chart-column"></i> Testing Metrics</h2>
+<table style="width:100%;text-align:center">
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Regression Coverage</td><td>60%</td></tr>
+<tr><td>Manual Effort Reduced</td><td>30%</td></tr>
+<tr><td>Domains Worked</td><td>5+</td></tr>
+<tr><td>Automation Tools Used</td><td>8+</td></tr>
+</table>
+</section>
+
+<section class="card" id="testimonials">
+<h2><i class="fa-solid fa-comments"></i> Testimonials</h2>
+<blockquote>
+“Yash consistently delivered high-quality automation solutions and helped reduce regression cycles significantly.”
+<br><b>— Project Lead, QAble TestLab</b>
+</blockquote>
+</section>
+
+<section class="card">
+<h2><i class="fa-solid fa-user-check"></i> Why Hire Me?</h2>
+<ul>
+<li>Strong automation architecture mindset</li>
+<li>Hands-on with Playwright & Cypress</li>
+<li>Focus on stability and maintainability</li>
+<li>Excellent Agile collaboration skills</li>
+</ul>
+</section>
+
+<section class="card" id="contact">
+<h2><i class="fa-solid fa-envelope"></i> Contact Me</h2>
+<form action="https://formsubmit.co/yashpatel4431@gmail.com" method="POST">
+<input type="text" name="name" placeholder="Your Name" required><br><br>
+<input type="email" name="email" placeholder="Your Email" required><br><br>
+<textarea name="message" placeholder="Your Message" required></textarea><br><br>
+<button type="submit" class="btn">Send Message</button>
+</form>
 </section>
 
 <footer>© 2026 Yash Patel | QA Automation Engineer</footer>
@@ -120,29 +200,31 @@ footer{text-align:center;padding:25px;opacity:.6;}
 <script>
 particlesJS("particles-js",{particles:{number:{value:55},size:{value:2},line_linked:{enable:true,color:"#3b82f6"},color:{value:"#3b82f6"}}});
 
-/* Typing */
 const roles=["SQA Engineer","Automation Tester","Playwright Specialist"];
 let i=0,j=0,d=false,t=document.getElementById("typing");
 (function type(){let r=roles[i];t.textContent=r.substring(0,j);
 if(!d&&j++===r.length+1){d=true;setTimeout(type,900);return;}
 if(d&&j--===0){d=false;i=(i+1)%roles.length;}setTimeout(type,d?50:100);})();
 
-/* Skill bars */
 document.querySelectorAll(".skill-fill").forEach(el=>{setTimeout(()=>el.style.width=el.dataset.width,600);});
 
-/* Counters */
 document.querySelectorAll(".stat h3").forEach(el=>{
 let target=+el.dataset.count,c=0,inc=target/80;
 let counter=setInterval(()=>{c+=inc;if(c>=target){c=target;clearInterval(counter);}el.textContent=c.toFixed(1)},30);
 });
 
-/* Slider */
 let slides=document.querySelectorAll(".project-slide"),dots=document.querySelector(".dots"),idx=0;
 slides.forEach((_,i)=>{let dot=document.createElement("span");dot.className="dot";if(i==0)dot.classList.add("active");dot.onclick=()=>show(i);dots.appendChild(dot);});
 function show(i){slides[idx].classList.remove("active");dots.children[idx].classList.remove("active");idx=i;slides[idx].classList.add("active");dots.children[idx].classList.add("active");}
 document.querySelector(".next").onclick=()=>show((idx+1)%slides.length);
 document.querySelector(".prev").onclick=()=>show((idx-1+slides.length)%slides.length);
 setInterval(()=>show((idx+1)%slides.length),6000);
+
+let particlesOn=true;
+function toggleParticles(){particlesOn=!particlesOn;document.getElementById("particles-js").style.display=particlesOn?"block":"none";}
+
+let keys="";
+document.addEventListener("keydown",e=>{keys+=e.key.toLowerCase();if(keys.includes("qa")){alert("Quality First! 🧪");keys="";}});
 </script>
 </body>
 </html>
