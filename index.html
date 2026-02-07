@@ -1,135 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yash Patel | QA Automation Engineer</title>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-:root {
-  --text: #f1f5f9;
-  --accent: #3b82f6;
-}
+:root { --accent:#3b82f6; --text:#e2e8f0; }
 
-/* 🌌 PARTICLE BACKGROUND */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  color: var(--text);
-  background: #000;
-  overflow-x: hidden;
+  margin:0;
+  font-family: 'Segoe UI', sans-serif;
+  color:var(--text);
+  background:#000;
+  overflow-x:hidden;
 }
+#particles-js { position:fixed; width:100%; height:100%; z-index:-1; }
 
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-/* GLASS CARDS */
-.card {
-  background: rgba(17,17,17,0.75);
-  backdrop-filter: blur(10px);
-  padding: 25px;
-  border-radius: 16px;
-  margin: 30px auto;
-  max-width: 950px;
-  box-shadow: 0 0 25px rgba(59,130,246,0.08);
-}
-
-header {
-  text-align: center;
-  padding: 60px 20px 40px;
-}
+header { text-align:center; padding:60px 20px 30px; }
 
 .profile-pic {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 4px solid white;
-  box-shadow: 0 0 30px rgba(59,130,246,0.6);
+  width:160px; height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  border:4px solid white;
+  box-shadow:0 0 35px rgba(59,130,246,.6);
 }
-
-h2 i { color: var(--accent); margin-right: 8px; }
 
 .btn {
-  display: inline-block;
-  padding: 10px 18px;
-  margin: 8px 5px 0 0;
-  background: var(--accent);
-  color: white;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
+  display:inline-block;
+  margin:8px;
+  padding:10px 18px;
+  background:var(--accent);
+  color:white;
+  border-radius:8px;
+  text-decoration:none;
+  transition:.3s;
 }
-.btn:hover { transform: translateY(-3px); }
+.btn:hover { transform:translateY(-3px); }
+
+.card {
+  background:rgba(15,15,15,.75);
+  backdrop-filter:blur(14px);
+  border-radius:18px;
+  padding:30px;
+  margin:30px auto;
+  max-width:1000px;
+  box-shadow:0 0 25px rgba(59,130,246,.15);
+}
+
+h2 i { color:var(--accent); margin-right:10px; }
+
+/* SKILLS */
+.skill { margin:15px 0; }
+.skill-title { display:flex; align-items:center; gap:10px; }
+.skill-bar { height:8px; background:#222; border-radius:10px; overflow:hidden; }
+.skill-fill { height:100%; background:var(--accent); width:0; }
+
+/* COUNTERS */
+.stats { display:flex; justify-content:space-around; text-align:center; flex-wrap:wrap; }
+.stat h3 { font-size:32px; color:var(--accent); margin:5px 0; }
 
 /* PROJECT SLIDER */
-.project-slider { position: relative; min-height: 260px; }
-
+.project-slider { position:relative; min-height:260px; }
 .project-slide {
-  position: absolute;
-  width: 100%;
-  padding: 25px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(59,130,246,0.15), rgba(0,0,0,0.5));
-  border: 1px solid rgba(59,130,246,0.4);
-  backdrop-filter: blur(12px);
-  opacity: 0;
-  transform: translateY(20px) scale(0.98);
-  transition: all 0.6s ease;
+  position:absolute; width:100%; opacity:0;
+  transform:translateY(20px) scale(.98);
+  transition:.6s;
 }
+.project-slide.active { opacity:1; transform:none; position:relative; }
 
-.project-slide.active {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-  position: relative;
-  animation: glowCard 4s ease-in-out infinite alternate;
-}
-
-@keyframes glowCard {
-  from { box-shadow: 0 0 20px rgba(59,130,246,0.2); }
-  to { box-shadow: 0 0 40px rgba(59,130,246,0.5); }
-}
-
-/* ARROWS */
 .slider-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.6);
-  border: 1px solid var(--accent);
-  color: white;
-  padding: 8px 12px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 2;
+  position:absolute; top:50%; transform:translateY(-50%);
+  background:#111; border:1px solid var(--accent);
+  color:white; padding:8px 12px; border-radius:50%; cursor:pointer;
 }
-.prev { left: -15px; }
-.next { right: -15px; }
+.prev{left:-15px;} .next{right:-15px;}
 
-/* DOTS */
-.dots { text-align: center; margin-top: 15px; }
-.dot {
-  height: 10px; width: 10px;
-  margin: 0 5px;
-  background: #555;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-}
-.dot.active { background: var(--accent); }
+.dots{text-align:center;margin-top:10px;}
+.dot{height:10px;width:10px;margin:0 5px;background:#555;border-radius:50%;display:inline-block;cursor:pointer;}
+.dot.active{background:var(--accent);}
 
-footer {
-  text-align: center;
-  padding: 20px;
-  opacity: 0.7;
-}
+footer{text-align:center;padding:25px;opacity:.6;}
 </style>
 </head>
 
@@ -139,83 +93,114 @@ footer {
 <header>
   <img src="profile.jpg" class="profile-pic">
   <h1>Yash Patel</h1>
-  <p><span id="typing"></span></p>
+  <p id="typing"></p>
   <a class="btn" href="resume.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Resume</a>
-  <a class="btn" href="https://www.linkedin.com/in/yash-patel-887886247" target="_blank"><i class="fab fa-linkedin"></i></a>
   <a class="btn" href="https://github.com/yashpQA" target="_blank"><i class="fab fa-github"></i></a>
+  <a class="btn" href="https://www.linkedin.com/in/yash-patel-887886247" target="_blank"><i class="fab fa-linkedin"></i></a>
   <a class="btn" href="mailto:yashpatel4431@gmail.com"><i class="fa-solid fa-envelope"></i></a>
 </header>
 
+<!-- ABOUT -->
 <section class="card">
-  <h2><i class="fa-solid fa-diagram-project"></i> Key Projects</h2>
+<h2><i class="fa-solid fa-user"></i> Professional Summary</h2>
+<p>Automation Test Engineer with experience in UI & functional testing across E-commerce, Banking, Compliance and AI-Bookkeeping domains. Skilled in Playwright, Selenium, Cypress, API testing, Agile methodologies, and delivering high-quality releases.</p>
+</section>
 
-  <div class="project-slider">
-    <button class="slider-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
-    <button class="slider-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+<!-- SKILLS -->
+<section class="card">
+<h2><i class="fa-solid fa-screwdriver-wrench"></i> Technical Skills</h2>
 
-    <div class="project-slide active">
-      <h3><i class="fa-solid fa-cart-shopping"></i> E-Commerce Automation</h3>
-      <p>Automated purchase flows using Playwright and improved regression efficiency.</p>
-    </div>
+<div class="skill">
+  <div class="skill-title"><i class="fab fa-js"></i> Playwright / Cypress</div>
+  <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+</div>
 
-    <div class="project-slide">
-      <h3><i class="fa-solid fa-shield-halved"></i> Compliance & KYC</h3>
-      <p>Automated KYC, KYB, AML, OFAC validation workflows.</p>
-    </div>
+<div class="skill">
+  <div class="skill-title"><i class="fab fa-java"></i> Selenium + Java</div>
+  <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+</div>
 
-    <div class="project-slide">
-      <h3><i class="fa-solid fa-robot"></i> AI Bookkeeping Platform</h3>
-      <p>Automated AI-based financial workflows using Cypress.</p>
-    </div>
+<div class="skill">
+  <div class="skill-title"><i class="fa-solid fa-vial"></i> API Testing (Postman)</div>
+  <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+</div>
 
-    <div class="project-slide">
-      <h3><i class="fa-solid fa-chart-line"></i> Risk Management System</h3>
-      <p>Automated validation for risk and account management modules.</p>
-    </div>
-  </div>
+<div class="skill">
+  <div class="skill-title"><i class="fa-solid fa-bug"></i> Manual / Regression Testing</div>
+  <div class="skill-bar"><div class="skill-fill" data-width="88%"></div></div>
+</div>
+</section>
 
-  <div class="dots"></div>
+<!-- STATS -->
+<section class="card stats">
+  <div class="stat"><h3 data-count="60">0</h3><p>% Regression Automated</p></div>
+  <div class="stat"><h3 data-count="30">0</h3><p>% Manual Effort Reduced</p></div>
+  <div class="stat"><h3 data-count="1.5">0</h3><p>Years Experience</p></div>
+</section>
+
+<!-- PROJECTS -->
+<section class="card">
+<h2><i class="fa-solid fa-diagram-project"></i> Key Projects</h2>
+
+<div class="project-slider">
+<button class="slider-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+<button class="slider-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+
+<div class="project-slide active">
+<h3>E-Commerce Automation</h3>
+<p>Automated end-to-end purchase flows and regression suites using Playwright.</p>
+</div>
+
+<div class="project-slide">
+<h3>Compliance & KYC Systems</h3>
+<p>Automated KYC, KYB, AML, OFAC, sanctions, and accreditation verification workflows.</p>
+</div>
+
+<div class="project-slide">
+<h3>AI Bookkeeping Platform</h3>
+<p>Automated financial workflows, document ingestion, reconciliation and reporting using Cypress.</p>
+</div>
+
+<div class="project-slide">
+<h3>Risk & Account Management</h3>
+<p>Created automation for complex risk validation modules and account management systems.</p>
+</div>
+
+</div>
+<div class="dots"></div>
 </section>
 
 <footer>© 2026 Yash Patel | QA Automation Engineer</footer>
 
-<!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 <script>
-particlesJS("particles-js", {
-  particles: { number: { value: 60 }, size: { value: 2 }, color: { value: "#3b82f6" }, line_linked: { enable: true, color: "#3b82f6" } }
-});
+particlesJS("particles-js",{particles:{number:{value:55},size:{value:2},line_linked:{enable:true,color:"#3b82f6"},color:{value:"#3b82f6"}}});
 
 /* Typing */
 const roles=["SQA Engineer","Automation Tester","Playwright Specialist"];
-let i=0,j=0,d=false,e=document.getElementById("typing");
-(function t(){let r=roles[i];e.textContent=r.substring(0,j);if(!d&&j++===r.length+1){d=true;setTimeout(t,800);return;}if(d&&j--===0){d=false;i=(i+1)%roles.length;}setTimeout(t,d?50:100);})();
+let i=0,j=0,d=false,t=document.getElementById("typing");
+(function type(){let r=roles[i];t.textContent=r.substring(0,j);
+if(!d&&j++===r.length+1){d=true;setTimeout(type,900);return;}
+if(d&&j--===0){d=false;i=(i+1)%roles.length;}setTimeout(type,d?50:100);})();
 
-/* Slider */
-let slides=document.querySelectorAll(".project-slide"),
-dotsContainer=document.querySelector(".dots"),
-index=0;
-
-slides.forEach((_,i)=>{
-  let dot=document.createElement("span");
-  dot.className="dot";
-  if(i===0) dot.classList.add("active");
-  dot.onclick=()=>showSlide(i);
-  dotsContainer.appendChild(dot);
+/* Skill Bars */
+document.querySelectorAll(".skill-fill").forEach(el=>{
+  setTimeout(()=>el.style.width=el.dataset.width,500);
 });
 
-function showSlide(i){
-  slides[index].classList.remove("active");
-  dotsContainer.children[index].classList.remove("active");
-  index=i;
-  slides[index].classList.add("active");
-  dotsContainer.children[index].classList.add("active");
-}
+/* Counters */
+document.querySelectorAll(".stat h3").forEach(el=>{
+  let target=+el.dataset.count, c=0, inc=target/80;
+  let counter=setInterval(()=>{c+=inc; if(c>=target){c=target;clearInterval(counter);} el.textContent=c.toFixed(1)},30);
+});
 
-document.querySelector(".next").onclick=()=>showSlide((index+1)%slides.length);
-document.querySelector(".prev").onclick=()=>showSlide((index-1+slides.length)%slides.length);
-setInterval(()=>showSlide((index+1)%slides.length),5000);
+/* Slider */
+let slides=document.querySelectorAll(".project-slide"),dots=document.querySelector(".dots"),idx=0;
+slides.forEach((_,i)=>{let dot=document.createElement("span");dot.className="dot";if(i==0)dot.classList.add("active");dot.onclick=()=>show(i);dots.appendChild(dot);});
+function show(i){slides[idx].classList.remove("active");dots.children[idx].classList.remove("active");idx=i;slides[idx].classList.add("active");dots.children[idx].classList.add("active");}
+document.querySelector(".next").onclick=()=>show((idx+1)%slides.length);
+document.querySelector(".prev").onclick=()=>show((idx-1+slides.length)%slides.length);
+setInterval(()=>show((idx+1)%slides.length),6000);
 </script>
-
 </body>
 </html>
