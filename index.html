@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yash Patel | SQA Engineer</title>
+
+<style>
+:root {
+  --bg: #f4f6f8;
+  --text: #1f2937;
+  --card: #ffffff;
+  --accent: #2563eb;
+  --header: #1e293b;
+}
+
+body.dark {
+  --bg: #0f172a;
+  --text: #e5e7eb;
+  --card: #1e293b;
+  --accent: #3b82f6;
+  --header: #020617;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  transition: all 0.4s ease;
+  scroll-behavior: smooth;
+}
+
+/* HEADER */
+header {
+  background: var(--header);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+}
+
+header img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 15px;
+  animation: fadeIn 1.2s ease;
+}
+
+header h1 {
+  margin: 10px 0 5px;
+  font-size: 40px;
+}
+
+header p {
+  font-size: 18px;
+  color: #cbd5e1;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-block;
+  margin: 10px 5px 0;
+  padding: 10px 18px;
+  background: var(--accent);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* SECTIONS */
+section {
+  max-width: 1000px;
+  margin: 60px auto;
+  padding: 0 20px;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 0.9s ease forwards;
+}
+
+h2 {
+  border-left: 5px solid var(--accent);
+  padding-left: 12px;
+}
+
+.card {
+  background: var(--card);
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+}
+
+/* SKILLS */
+.skills span {
+  display: inline-block;
+  background: #e0e7ff;
+  color: #1e3a8a;
+  padding: 8px 12px;
+  border-radius: 20px;
+  margin: 6px;
+  font-size: 14px;
+}
+
+body.dark .skills span {
+  background: #334155;
+  color: #e5e7eb;
+}
+
+/* PROJECTS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* CONTACT FORM */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button.submit-btn {
+  margin-top: 15px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: var(--header);
+  color: #cbd5e1;
+  margin-top: 50px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+  <img src="profile.jpg" alt="Yash Patel">
+  <h1>Yash Patel</h1>
+  <p>SQA Engineer | Automation Tester (Playwright • Selenium • Cypress)</p>
+
+  <a class="btn" href="resume.pdf" download>📄 Download Resume</a>
+  <a class="btn" href="https://www.linkedin.com/in/yash-patel-887886247" target="_blank">LinkedIn</a>
+  <a class="btn" href="https://github.com/yashpQA" target="_blank">GitHub</a>
+</header>
+
+<section>
+  <h2>👨‍💻 About Me</h2>
+  <div class="card">
+    I am an SQA Engineer with 1.5+ years of experience in automation and manual testing across
+    E-commerce, Banking, Compliance, and AI-based financial platforms.
+    I specialize in building reliable UI and end-to-end automation frameworks that reduce manual
+    effort and improve software quality.
+  </div>
+</section>
+
+<section>
+  <h2>🛠 Skills & Tools</h2>
+  <div class="card skills">
+    <span>Playwright</span>
+    <span>Selenium</span>
+    <span>Cypress</span>
+    <span>Postman</span>
+    <span>JIRA</span>
+    <span>TestRail</span>
+    <span>JavaScript</span>
+    <span>TypeScript</span>
+    <span>Java</span>
+    <span>Git</span>
+  </div>
+</section>
+
+<section>
+  <h2>💼 Professional Experience</h2>
+  <div class="card">
+    <h3>SQA Engineer – QAble TestLab Pvt. Ltd.</h3>
+    <ul>
+      <li>Automated 60% of regression test cases using Playwright</li>
+      <li>Reduced manual testing effort by 30% per release</li>
+      <li>Automated KYC, KYB, AML, OFAC, and compliance workflows</li>
+      <li>Validated complete E-commerce purchase flows</li>
+      <li>Worked in Agile sprints with developers and stakeholders</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>🧪 Automation Projects</h2>
+  <div class="projects">
+    <div class="card">
+      <h3>E-Commerce Automation</h3>
+      <p>Playwright automation for cart, checkout, and payment workflows.</p>
+    </div>
+    <div class="card">
+      <h3>Compliance Workflow Testing</h3>
+      <p>Automated KYC/KYB, AML, sanctions, and verification flows.</p>
+    </div>
+    <div class="card">
+      <h3>AI Bookkeeping Platform</h3>
+      <p>Cypress end-to-end tests for income, expense, and reconciliation workflows.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>📩 Contact Me</h2>
+  <div class="card">
+    <p>Email: <a href="mailto:yashpatel4431@gmail.com">yashpatel4431@gmail.com</a></p>
+
+    <!-- Replace YOUR_FORM_ID after creating Formspree form -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button class="submit-btn" type="submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  © 2026 Yash Patel | SQA Automation Engineer
+</footer>
+
+<script>
+function toggleDarkMode() {
+  document.body.classList.toggle("dark");
+}
+</script>
+
+</body>
+</html>
